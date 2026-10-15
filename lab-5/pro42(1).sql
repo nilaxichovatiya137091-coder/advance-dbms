@@ -1,0 +1,16 @@
+CREATE OR REPLACE TRIGGER p42
+
+BEFORE INSERT ON emp_sal1
+
+FOR EACH ROW
+
+BEGIN
+    
+IF :NEW.SALARY < 40000 THEN
+       
+ DBMS_OUTPUT.PUT_LINE('poor salary');
+   
+ END IF;
+
+END p42;
+/
